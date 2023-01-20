@@ -32,22 +32,61 @@ CREATE TABLE uslugi(
 -- B. do pola cena: wpisywane wartości muszą być większe od 10
 -- 4. Połącz obie tabele:
 CREATE TABLE UslugiKlientow(
-    
-)
+    ID INT,
+    idklienta INT,
+    PRIMARY KEY(ID,idklienta),
+    FOREIGN KEY(ID) REFERENCES Uslugi(ID),
+    FOREIGN KEY(idklienta) REFERENCES Klienci(idklienta),
+);
 -- A. określ typ związku i sposób przejścia do postaci relacyjnej
 -- B. dodaj potrzebne pole i/lub tabele, pokaż projekt na zrzucie
 -- C. dodaj więzy integralności referencyjnej
 -- 5. Wprowadź dane dwóch klientów i dwie usługi
+INSERT INTO Klienci
+(imie,nazwisko,email)
+VALUES('Kajtek','Kowalski','kajtekkowalski@gmail.com'),
+('Jan','Nowak','Jannowak@gmail.com');
 
+INSERT INTO Uslugi
+(nazwa,cena)
+VALUES
+('sprzatanie',60),('mycie',70);
 -- 6. Upewnij się, że działają więzy integralności (nie puste, wartości się nie powtarzają, check)
 
+
 -- A. w tabeli Klienci
+INSERT INTO Klienci
+(imie,nazwisko,email)
+VALUES
+('Sebix','Kowalski','kajtekkowalski@gmail.com')
 -- B. w tabeli Uslugi
+INSERT INTO Uslugi
+(nazwa,cena)
+VALUES
+('naprawa',7);
+
 -- 7. Zamów i wyprowadź do bazy danych wykonanie usług: 
 -- A. pierwszy klient zamawia pierwszą usługę, przy wprowadzaniu danych posługuj się nazwami usług
--- B. Drugi klient zamawia obie usługi, przy wprowadzaniu danych posługuj się nazwami usług
--- 8. Upewnij się, że działają więzy integralności referencyjnej
+INSERT INTO Uslugi
+(cena)
+VALUES
+(75);
 
+-- B. Drugi klient zamawia obie usługi, przy wprowadzaniu danych posługuj się nazwami usług
+INSERT INTO UslugiKlientow
+(ID, idklienta)
+VALUES
+(1,2),
+(2,2);
+-- 8. Upewnij się, że działają więzy integralności referencyjnej
+DELETE FROM Klienci
+WHERE idklienta=1;
 -- A. usuń dane pierwszego klienta z tabeli klienci,
+
 --  B. z tabeli klienci usuń dane pierwszego klienta stosując podejście wywżone
 -- C. z tabeli klienci usuń dane drugiego klienta stosując podejście kaskadowe usuwanie powiązanych pól
+DELETE FROM UslugiKlientow
+WHERE idklienta=2;
+
+DELETE FROM Klienci
+WHERE idklienta=2;
