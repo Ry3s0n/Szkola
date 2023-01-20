@@ -1,0 +1,9 @@
+body{
+    display: flex;
+    gap: 40px;
+}
+nav{
+    border-right: 1px solid black;
+    height: 100vh;
+    width: 30%;
+}
