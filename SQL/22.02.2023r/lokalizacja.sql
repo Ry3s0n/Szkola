@@ -12,4 +12,12 @@ SELECT lokalizacja, RIGHT(lokalizacja,2), wojewodztwo
 FROM moje_kontakty;
 
 UPDATE moje_kontakty
-SET wojewodztwo
+SET wojewodztwo = RIGHT(lokalizacja,2);
+
+SELECT lokalizacja, SUBSTRING_INDEX(lokalizacja,',',1),miejscowosc
+FROM moje_kontakty
+
+UPDATE moje_kontakty
+SET miejscowosc= SUBSTRING_INDEX(lokalizacja,',',1);
+
+ALTER TABLE 
