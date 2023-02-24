@@ -47,10 +47,30 @@ PRIMARY KEY(kontakt,zainteresowanie)
 );
 
 -- B. wystaw do niej id kontaktu i id zainteresowania dla wierszy, w których zainteresowanie1 jest równe nazwie zainteresowania
+SELECT moje_kontakty.id,zainteresowania.id,zainteresowanie,nazwa
+FROM moje_kontakty,zainteresowania
+WHERE zainteresowanie1 = nazwa;
+
+INSERT INTO kto_jakie
 SELECT moje_kontakty.id,zainteresowania.id
 FROM moje_kontakty,zainteresowania
+WHERE zainteresowanie1 = nazwa;
 
 -- C. powtórz dla kolumn zaintersowanie2 i zainteresowanie3 
+SELECT moje_kontakty.id,zainteresowania.id,zainteresowanie2,nazwa
+FROM moje_kontakty,zainteresowania
+WHERE zainteresowanie1 = nazwa;
 
-
+INSERT INTO kto_jakie
+SELECT moje_kontakty.id,zainteresowania.id
+FROM moje_kontakty,zainteresowania
+WHERE zainteresowanie2 = nazwa;
 -- 4. usuń zbędne kolumny z tabeli moje_kontakty
+ALTER TABLE moje_kontakty
+DROP zainteresowanie1;
+
+ALTER TABLE moje_kontakty
+DROP zainteresowanie2;
+
+ALTER TABLE moje_kontakty
+DROP zainteresowanie3;
