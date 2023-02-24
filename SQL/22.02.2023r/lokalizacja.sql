@@ -20,4 +20,4 @@ FROM moje_kontakty
 UPDATE moje_kontakty
 SET miejscowosc= SUBSTRING_INDEX(lokalizacja,',',1);
 
-ALTER TABLE 
+ALTER TABLE moje_kontakty
