@@ -47,7 +47,8 @@ PRIMARY KEY(kontakt,zainteresowanie)
 );
 
 -- B. wystaw do niej id kontaktu i id zainteresowania dla wierszy, w których zainteresowanie1 jest równe nazwie zainteresowania
-
+SELECT moje_kontakty.id,zainteresowania.id
+FROM moje_kontakty,zainteresowania
 
 -- C. powtórz dla kolumn zaintersowanie2 i zainteresowanie3 
 
