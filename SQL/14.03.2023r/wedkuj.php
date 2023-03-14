@@ -19,14 +19,16 @@
 
                 $sql = "SELECT id,nazwa,wystepowanie FROM ryby WHERE styl_zycia=1";
                 $result = $link -> query($sql);
-                echo "<tr>";
+              
                 while($row = $result->fetch_assoc()){
+                    echo "<tr>";
                     foreach($row as $pole){
                         echo "<td> $pole </td>";
                     }
+                    echo "</tr>";
                 }
 
-                echo "</tr>";
+               
                 $link -> close();
             ?>
     </table>
