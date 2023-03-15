@@ -1,11 +1,24 @@
-const form = document.getElementById('#form');
-const img = document.getElementById('#img');
-const sign = document.getElementById('#sign');
-const picture = document.getElementById('#picture');
-const pictureSign = document.getElementById('#pictureSign');
+const form = document.getElementById('form');
+const img = document.getElementById('img');
+const sign = document.getElementById('sign');
+const picture = document.getElementById('picture');
+const pictureSign = document.getElementById('pictureSign');
 
-form.addEventListener('submit',(event)=>{
-    event.preventDefault()
-    picture.src = img.value;
+let saveObject = {
+    img: '',
+    sign: ''
+};
+
+if(localStorage.getItem('object')!==null){
+    
+}
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    picture.setAttribute('src', img.value);
     pictureSign.textContent = sign.value;
+    saveObject.img = img.value;
+    saveObject.sign = sign.value;
+
+    localStorage.setItem('object',JSON.stringify(saveObject));
 });
