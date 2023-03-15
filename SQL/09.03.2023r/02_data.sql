@@ -20,3 +20,18 @@ FROM pracownicy;
 -- 6. Zaimportuj dane pracowników filii. Dodaj dane z tej tabeli do tabeli pracownicy.  (STR_TO_DATE)
 
 -- 7. Jak wstawić dane, jeśli mamy datę podaną w formacie brytyjskim? dodaj nowego pracownika, data zatrudnienia to 06/05/2021
+
+INSERT INTO pracownicy
+(pracownik_id,nazwisko,email,data_zatrudnienia,stanowisko_id)
+values
+(208,'Kowalski','kowalski@gmail.com',STR_TO_DATE('17/06/2025', '%d/%M/%Y'), 'AD_VP');
+
+SELECT STR_TO_DATE('17/06/2015','%d/%m/%Y');
+
+--8. Zmien datę zatrudnienia użytkownika o id 100 na 03/21/2022 - format amerykański
+
+SELECT STR_TO_DATE('03/21/2022', '%m/%d/%Y');
+
+UPDATE pracownicy
+SET data_zatrudnienia= STR_TO_DATE('03/21/2022', '%m/%d/%Y')
+WHERE pracownik_id = 100;
