@@ -10,7 +10,7 @@ let saveObject = {
 };
 
 if(localStorage.getItem('object')!==null){
-    let localObject = localStorage.getItem('object');
+    let localObject = JSON.parse(localStorage.getItem('object'));
 }
 
 form.addEventListener('submit', (event) => {
