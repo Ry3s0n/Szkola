@@ -11,6 +11,8 @@ let saveObject = {
 
 if(localStorage.getItem('object')!==null){
     let localObject = JSON.parse(localStorage.getItem('object'));
+    picture.src = localObject.img
+    pictureSign.textContent = localObject.sign;
 }
 
 form.addEventListener('submit', (event) => {
