@@ -1,0 +1,23 @@
+4. Korzystając z zakładki SQL, przygotuj zapytania do bazy i wykonaj je. Kwerendy zapisz w pliku kwerendy.txt w podfolderze baza. Lista kwerend do zdefiniowania:
+
+
+a) Zwrócenie tytułów filmów, dla których gatunek to SF,
+//zapytanie A:
+SELECT tytul FROM filmy WHERE gatunek="SF";
+
+b) Zwrócenie wszystkich tytułów filmów wraz z nazwiskami reżyserów,
+//zapytanie B:
+SELECT tytul,nazwisko
+FROM filmy
+INNER JOIN rezyserzy ON filmy.rezyserID=rezyserzy.IDrezyser
+
+c) Zwrócenie filmów, dla których ocena w recenzji jest równa 4, 
+//zapytanie c
+SELECT filmy.* FROM recenzje INNER JOIN filmy ON recenzje.IDRecenzja WHERE ocena = 4;
+
+
+d) Dodanie rekordu do tabeli rezyserzy z danymi: ID – 4, Andrzej Waj
+
+//zapytanie d
+INSERT INTO rezyserzy
+VALUES (4,'Andrzej','Wajda');

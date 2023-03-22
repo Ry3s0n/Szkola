@@ -1,1 +1,1 @@
-kwerenda 1: SELECT id,nazwa,wystepowanie FROM ryby WHERE styl_zycia=1
+kwerenda 1: SELECT id,nazwa,wystepowanie FROM ryby WHERE styl_zycia=
