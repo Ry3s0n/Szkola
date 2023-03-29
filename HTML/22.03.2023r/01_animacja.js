@@ -19,7 +19,7 @@ function animTxt(){
     movtxt.style.left='500px';
   }
   else{
-    movtxt.style.left=`${parseInt(movtxt.style.left)-3}px`
+    movtxt.style.left=`${parseInt(movtxt.style.left)-1}px`
   }
 }
 
