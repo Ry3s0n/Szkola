@@ -23,4 +23,4 @@ function animTxt(){
   }
 }
 
-animTxt(); // added function call
+setInterval(animTxt,50);
