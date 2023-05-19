@@ -1,0 +1,13 @@
+const h1 = document.querySelector('h1');
+
+
+    let tabela = ['cudowny', 'najlepszy', 'wyborny', 'znakomity'];
+    let liczba = 0;
+    
+    setInterval(zmieniaj, 2000);
+
+    function zmieniaj(){
+            document.getElementById('h1').textContent = tabela[liczba];
+            liczba = (liczba + 1) % tabela.length;
+        }
+

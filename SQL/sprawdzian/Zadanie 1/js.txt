@@ -1,0 +1,14 @@
+const form = document.querySelector('#form');
+const button = document.getElementById('button');
+
+button.addEventListener('click',zrobTO);
+    function zrobTO() {
+      const wynik =document.getElementById("wynik");
+      let liczba1 = document.getElementById("liczba1").value;
+      let liczba2 = document.getElementById("liczba2").value;
+
+      let wynik1 = parseInt(liczba1) * parseInt(liczba2);
+      wynik.innerHTML = `Iloczyn wpisanych liczb wynosi ${wynik1}`
+
+    }
+// *

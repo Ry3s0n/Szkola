@@ -1,0 +1,30 @@
+const form = document.querySelector('#form');
+const button = document.getElementById('button');
+
+button.addEventListener('click',funkcja1);
+
+function funkcja1(){
+    const pierwszy = document.querySelector('#pierwszy');
+    const drugi = document.querySelector('#drugi');
+    const trzeci = document.querySelector('#trzeci');
+    const wynik = document.querySelector("#wynik");
+    if(pierwszy.checked){
+        wynik.src = "./pierwszy.jpg";
+        console.log(wynik.value);
+    }else if(drugi.checked){
+        wynik.src = './drugi.jpg';
+        console.log(wynik.value);
+    }else{
+        wynik.src = './trzeci.jpg';
+        console.log(wynik.value);
+    }
+
+}
+
+    localStorage.setItem('funkcja1', funkcja1);
+
+    let zapisz = document.getElementById('zapisz');
+
+    console.log(zapisz)
+
+    
