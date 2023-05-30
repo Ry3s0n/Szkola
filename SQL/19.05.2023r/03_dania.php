@@ -27,8 +27,11 @@
         }
     ?>
     </select>
+    <br><label for="price">Nowa cena</label>
+    <input type="number" name="price" id="price"><br>
+    <button>Wyślij</button>
 </form>
-
+    
 
     <?php
 
