@@ -1,6 +1,11 @@
 -- 1.Utwórz zapytanie, które wyświetli ilości produktów dla poszczególnych kategorii
 
-
+SELECT *
+FROM  (SELECT categoryID, COUNT(*) AS Quantity)
+FROM products
+GROUP BY categoryID(
+    WHERE categoryID>3 AND Quantity BETWEEN 6 AND 9;
+)
 
 -- 2. Korzystając z podzapytań wyświetl tylko te wiersze, w których numer kategorii jest większy od 3, a  ilości produktów mieszczą się pomiędzy 6 a 9
 
